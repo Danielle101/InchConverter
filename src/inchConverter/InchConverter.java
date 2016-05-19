@@ -16,11 +16,12 @@ public class InchConverter {
 		// ask for user input
 		while (choice.equalsIgnoreCase("y")) {
 			System.out.println("Please enter your measurement in inches:");
-			double userInch = sc.nextDouble();
+			double userInch = Validator.readValidInt();
 			System.out.println("What unit of measurement would you like to convert inches to?\n");
+		//conversion selection menu
 			System.out.println("Selection Menu:\n1 for Millimeters\n2 for Centimeters\n3 for Feet\n4 for Yards");
 			System.out.println("\nPlease enter a number (1-4):");
-			int userSelect = sc.nextInt();
+			int userSelect = Validator.getValidInt(1, 4);
 			if (userSelect == 1) {
 				double MilliCon = userInch * 25.4;
 				System.out.println(userInch + " inches is equivalent to " + MilliCon + " millimeters.");
@@ -34,9 +35,9 @@ public class InchConverter {
 				double yardCon = userInch * 0.0277778;
 				System.out.println(userInch + " inches is equivalent to " + yardCon + " yards.");
 			}
-				System.out.println("\nWould you like to convert another number? (y/n):");
-				choice = sc.next();
+				choice = Validator.getString ("\nWould you like to convert another number? (y/n):\n");
 			}
+		//exit message
 		System.out.println("Thanks for using the Inch Converter App! Come back soon!");
 		sc.close();
 		}
