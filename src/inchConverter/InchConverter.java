@@ -11,23 +11,30 @@ public class InchConverter {
 		// created scanner for user input
 		Scanner sc = new Scanner(System.in);
 		// welcome message
-		System.out.println("Welcometo the inch conversion amount!");
+		System.out.println("Welcome to the inch conversion app!");
 		// ask for user input
 		System.out.println("Please enter your measurement in inches:");
 		double userInch = sc.nextDouble();
-		if (userInch > 0) {
+		System.out.println("What unit of measurement would you like to convert inches to?\n");
+		System.out.println("Selection Menu:\n1 for Millimeters\n2 for Centimeters\n3 for Feet\n4 for Yards");
+		System.out.println("\nPlease enter a number (1-4):");
+		int userSelect = sc.nextInt();
+		if (userSelect == 1){
 			double MilliCon = userInch * 25.4;
+			System.out.println(userInch+" inches is equivalent to "+MilliCon + " millimeters.");
+			}
+		else if (userSelect == 2){
 			double CentiCon = userInch * 2.54;
+			System.out.println(userInch+" inches is equivalent to "+CentiCon + " centimeters.");
+			}
+		else if (userSelect == 3){
 			double feetCon = userInch * 0.0833333;
-			double yardCon = userInch * 0.0277778;
-			System.out.println("\nConversion of " + userInch + " inches:\n==========================");
-			System.out.println(feetCon + " feet");
-			System.out.println(CentiCon + " centimeters");
-			System.out.println(MilliCon + " millimeters");
-			System.out.println(yardCon + " yards");
-
+			System.out.println(userInch+" inches is equivalent to "+feetCon + " feet.");
+			}
+		else if (userSelect == 4){double yardCon = userInch * 0.0277778;			
+			System.out.println(userInch+" inches is equivalent to "+yardCon + " yards.");
 		}
-		sc.close();
+		}
 	}
 
-}
+
