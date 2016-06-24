@@ -35,7 +35,7 @@ public class InchConverter {
 				double yardCon = userInch * 0.0277778;
 				System.out.println(userInch + " inches is equivalent to " + yardCon + " yards.");
 			}
-				choice = Validator.getString ("\nWould you like to convert another number? (y/n):\n");
+				choice = Validator.getString ("\nWould you like to convert another number? Please enter (y/n):\n");
 			}
 		//exit message
 		System.out.println("Thanks for using the Inch Converter App! Come back soon!");
